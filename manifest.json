@@ -1,0 +1,17 @@
+{
+  "id": "MY_HELLO_WORLD",
+  "name": "Hello World sample plugin",
+  "description": "定番のHello, World!を表示するプラグインです。",
+  "version": "1.0.0",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0.0"
+  },
+  "uiEntryPoints": [
+      {
+        "type": "menu",
+        "label": "Say hello",
+        "commandId": "helloCommand"
+      }
+  ]
+}
