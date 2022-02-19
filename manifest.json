@@ -1,17 +1,22 @@
 {
-  "id": "MY_HELLO_WORLD",
-  "name": "Hello World sample plugin",
-  "description": "定番のHello, World!を表示するプラグインです。",
-  "version": "1.0.0",
+  "id": "FONT_OPTION_XD_PLUGIN",
+  "name": "font option xd plugin",
+  "description": "フォントの情報を表示するプラグインです。",
+  "version": "0.0.101",
   "host": {
     "app": "XD",
-    "minVersion": "13.0.0"
+    "minVersion": "18.0"
   },
   "uiEntryPoints": [
-      {
-        "type": "menu",
-        "label": "Say hello",
-        "commandId": "helloCommand"
-      }
+    {
+      "type": "menu",
+      "label": "get font options",
+      "commandId": "helloCommand"
+    },
+    {
+      "label": "Panel UI Test",
+      "type": "panel",
+      "panelId": "panelUITest"
+    }
   ]
 }
