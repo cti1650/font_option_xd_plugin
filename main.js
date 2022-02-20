@@ -14,6 +14,7 @@ function create() {
     }
     #data_items p {
       font-size: 12px;
+      margin-left: 2em;
     }
     </style>
     <div id="property" class="show">
@@ -51,12 +52,12 @@ function update(selection) {
       div.innerHTML = `
       <div>
         <h2 style="font-family:${key}"><a href="https://fonts.google.com/?query=${key}" target="_blank">${key}</a></h2>
-        <p>  count : ${dataSet[key].count}</p>
-        <p>  style : ${dataSet[key].option.fontStyle.sort().join(",")}</p>
-        <p>  size  : ${dataSet[key].option.fontSize.sort().join(",")}</p>
-        <p>  space : ${dataSet[key].option.charSpacing.sort().join(",")}</p>
-        <p>  line  : ${dataSet[key].option.lineSpacing.sort().join(",")}</p>
-        <p>  para  : ${dataSet[key].option.paragraphSpacing.sort().join(",")}</p>
+        <p>count : ${dataSet[key].count}</p>
+        <p>style : ${dataSet[key].option.fontStyle.sort().join(",")}</p>
+        <p>size  : ${dataSet[key].option.fontSize.sort().join(",")}</p>
+        <p>space : ${dataSet[key].option.charSpacing.sort().join(",")}</p>
+        <p>line  : ${dataSet[key].option.lineSpacing.sort().join(",")}</p>
+        <p>para  : ${dataSet[key].option.paragraphSpacing.sort().join(",")}</p>
       </div>`;
       dataList.appendChild(div);
     });

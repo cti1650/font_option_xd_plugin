@@ -2,7 +2,7 @@
   "id": "FONT_OPTION_XD_PLUGIN",
   "name": "font option xd plugin",
   "description": "フォントの情報を表示するプラグインです。",
-  "version": "0.0.101",
+  "version": "0.0.104",
   "host": {
     "app": "XD",
     "minVersion": "18.0"
