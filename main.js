@@ -58,6 +58,8 @@ function update(selection) {
         <p>space : ${dataSet[key].option.charSpacing.sort().join(",")}</p>
         <p>line  : ${dataSet[key].option.lineSpacing.sort().join(",")}</p>
         <p>para  : ${dataSet[key].option.paragraphSpacing.sort().join(",")}</p>
+        <p>use character : </p>
+        <p><textarea style="font-family:${key}">${dataSet[key].option.text.split('').filter((x,i,self)=>(self.indexOf(x)===i)).join('')}</textarea></p>
       </div>`;
       dataList.appendChild(div);
     });
@@ -103,6 +105,7 @@ function helloHandlerFunction(selection, documentRoot) {
         const charSpacing = baseNode.styleRanges[0].charSpacing || "";
         const lineSpacing = baseNode.styleRanges[0].lineSpacing || "";
         const paragraphSpacing = baseNode.styleRanges[0].paragraphSpacing || "";
+        const text = baseNode.text;
         const fontOption = `${fontFamily}`;
         if (!arr[fontOption]) {
           arr = {...arr, [fontOption]: {
@@ -112,7 +115,8 @@ function helloHandlerFunction(selection, documentRoot) {
               fontSize: [fontSize],
               charSpacing: [charSpacing],
               lineSpacing: [lineSpacing],
-              paragraphSpacing: [paragraphSpacing]
+              paragraphSpacing: [paragraphSpacing],
+              text: text
             }
           }};
         }else{
@@ -122,6 +126,7 @@ function helloHandlerFunction(selection, documentRoot) {
           arr[fontOption].option.charSpacing.indexOf(charSpacing) === -1 && arr[fontOption].option.charSpacing.push(charSpacing);
           arr[fontOption].option.lineSpacing.indexOf(lineSpacing) === -1 && arr[fontOption].option.lineSpacing.push(lineSpacing);
           arr[fontOption].option.paragraphSpacing.indexOf(paragraphSpacing) === -1 && arr[fontOption].option.paragraphSpacing.push(paragraphSpacing);
+          arr[fontOption].option.text += text;
         }
         break;
       case "Group":
